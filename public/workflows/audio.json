@@ -1,0 +1,17 @@
+{
+  "1": {
+    "inputs": {
+      "text": "AUDIO_PROMPT",
+      "duration": 10,
+      "bpm": 120,
+      "style": "ambient"
+    },
+    "class_type": "AudioGeneration",
+    "_meta": { "title": "Audio Generation" }
+  },
+  "2": {
+    "inputs": { "audio": ["1", 0], "filename_prefix": "ComfyUI_Audio" },
+    "class_type": "SaveAudio",
+    "_meta": { "title": "Save Audio" }
+  }
+}

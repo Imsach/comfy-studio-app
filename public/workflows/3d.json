@@ -1,0 +1,24 @@
+{
+  "1": {
+    "inputs": { "image": "INPUT_IMAGE", "upload": "image" },
+    "class_type": "LoadImage",
+    "_meta": { "title": "Load Image" }
+  },
+  "2": {
+    "inputs": {
+      "image": ["1", 0],
+      "quality": "medium",
+      "format": "glb"
+    },
+    "class_type": "Image2Mesh",
+    "_meta": { "title": "Image to 3D Mesh" }
+  },
+  "3": {
+    "inputs": {
+      "mesh": ["2", 0],
+      "filename_prefix": "ComfyUI_3D"
+    },
+    "class_type": "SaveMesh",
+    "_meta": { "title": "Save Mesh" }
+  }
+}

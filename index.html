@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mufiji</title>
+    <meta name="description" content="Mufiji - Local AI generation interface" />
+  </head>
+  <body>
+    <div id="app-loader" style="position:fixed;inset:0;background:#08080f;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;">
+      <style>
+        @keyframes loader-pulse{0%,100%{opacity:.15;transform:scale(.95)}50%{opacity:1;transform:scale(1)}}
+        @keyframes loader-bar{0%{width:0}100%{width:100%}}
+        #app-loader .loader-icon{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,rgba(0,188,212,.2),rgba(20,184,166,.2));display:flex;align-items:center;justify-content:center;animation:loader-pulse 2s ease-in-out infinite;margin-bottom:24px;}
+        #app-loader .loader-icon svg{color:rgb(0,188,212);width:20px;height:20px}
+        #app-loader .loader-text{color:rgba(255,255,255,.35);font-family:Inter,system-ui,sans-serif;font-size:13px;letter-spacing:.02em;margin-bottom:16px}
+        #app-loader .loader-track{width:120px;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+        #app-loader .loader-fill{height:100%;background:linear-gradient(90deg,rgb(0,188,212),rgb(20,184,166));border-radius:2px;animation:loader-bar 1.8s ease-in-out infinite}
+      </style>
+      <div class="loader-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <div class="loader-text">Loading Mufiji</div>
+      <div class="loader-track"><div class="loader-fill"></div></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
