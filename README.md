@@ -347,6 +347,15 @@ http://SERVER_IP:8188
 http://SERVER_IP:8189
 ```
 
+**Alternative to running these in `tmux` forever:** a plain `python main.py` (or a tmux
+session) holds VRAM on every GPU permanently, whether or not anything is actually
+generating — a real problem if any of those GPUs are also needed for other work (ML
+training, etc.). [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) documents an on-demand setup
+instead — each instance starts on the first real request and stops again after sitting
+idle, the same idea as Ollama's keep-alive — plus how this app is actually deployed
+(Proxmox container, auto-update timer) and two known config-handling gaps in this repo's
+own code worth knowing about.
+
 ---
 
 # Running Under tmux
